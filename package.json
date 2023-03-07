@@ -1,0 +1,26 @@
+{
+  "name": "teamprofilegenerator",
+  "version": "1.0.0",
+  "description": "Your task is to take the given starter code and convert it into a working Node.js command-line application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ResonantDevotion/TeamProfileGenerator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ResonantDevotion/TeamProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/ResonantDevotion/TeamProfileGenerator#readme",
+  "devDependencies": {
+    "jest": "^29.4.3"
+  },
+  "dependencies": {
+    "inquirer": "^9.1.4"
+  }
+}
