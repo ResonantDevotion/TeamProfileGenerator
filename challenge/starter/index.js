@@ -10,7 +10,17 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
-const engineer = [{
+const team = [];
+
+const addTeamMember =
+{
+    type: 'list',
+    name: 'more',
+    message: 'Do you want to:',
+    choices: ['Add an engineer', 'Add an intern', 'Finish building the team']
+};
+
+const addEngineer = [{
     type: 'input',
     message: 'What is the engineers name?',
     name: 'eName'
@@ -29,9 +39,10 @@ const engineer = [{
     type: 'input',
     message: 'What is the engineers github username?',
     name: 'eGithub'
-}];
+}, addTeamMember]
+// .then((response) => {const engineer = new Engineer (response.eName, response.eID, response.eEmail, response.eGithub); team.push(engineer);});
 
-const intern = [{
+const addIntern = [{
     type: 'input',
     message: 'What is the interns name?',
     name: 'iName'
@@ -50,26 +61,40 @@ const intern = [{
     type: 'input',
     message: 'What is the interns school?',
     name: 'iSchool'
-}];
+}, addTeamMember]
+// .then((response) => {const intern = new Intern (response.iName, response.iID, response.iEmail, response.iSchool); team.push(intern)});
 
-const addTeamMember =
-{
-    type: 'list',
-    name: 'more',
-    message: 'Do you want to:',
-    choices: ['Add an engineer', 'Add an intern', 'Finish building the team']
+// const finaliseTeamProfiles = () => {
+//     fs.writeFile(
+//         // this is the file to be created
+//         // outputPath,
+//         // this is what will be in the file (pulls the previously mentioned variable/function)
+//         // render(team),
+//         // this is a validation, if there is an error it will console else, success will be consoled.
+//         (err) => err ? console.error(err) : console.log('Success')
+//     )
+}
+
+const teamMemberChoice = (response) => {
+    const choices = ['Add an engineer', 'Add an intern', 'Finish building the team'];
+    if (response.more === choices[0]) {
+        return inquirer.prompt(addEngineer).then((response) => {
+            teamMemberChoice(response);
+        });
+    } else if (response.more === choices[1]) {
+        return inquirer.prompt(addIntern).then((response) => {
+            teamMemberChoice(response);
+        });
+        // .then((response) => {const intern = new Intern (response.iName, response.iID, response.iEmail, response.iSchool); team.push(intern)})
+        .then((response) => {
+            teamMemberChoice(response);
+        });
+    } else {
+        finaliseTeamProfiles()
+    }
 };
 
 
-const teamMemberChoice =  (response) => {
-    const choices = ['Add an engineer', 'Add an intern', 'Finish building the team'];
-    if (response.more === choices[0]) {
-        return engineer;
-    } else if (response.more === choices[1]){
-        return intern;
-    } else {
-        return
-    }};
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
@@ -96,34 +121,8 @@ inquirer.prompt([
     },
     addTeamMember
 ])
-.then((response) => {
-    teamMemberChoice(response)
-})
-
-
-
-// .then((response) => {
-//     // create a variable to pull the global scope function into this promise
-    
-//     // if there isnt already have a file, it will create one with the following
-//     fs.writeFile(
-//         // this is the file to be created
-//         `team.html`,
-//         // this is what will be in the file (pulls the previously mentioned variable/function)
-//         response.render,
-//         // this is a validation, if there is an error it will console else, success will be consoled.
-//         (err) => err ? console.error(err) : console.log('Success')
-//     )
-// })
-
-
-
-
-
-
-
-
-// render(
-
-//     return HTML BLOCK
-// )
+    .then((response) => {
+        // const manager = new Manager (response.mName, response.mID, response.mEmail, response.mOffice);
+        // team.push(manager);
+        teamMemberChoice(response);
+    })
