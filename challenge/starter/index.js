@@ -77,23 +77,23 @@ function addEngineer() {
         .then((response) => {
             const engineer = new Engineer(response.eName, response.eID, response.eEmail, response.eGithub);
             team.push(engineer);
-            teamMemberChoice;
+            teamMemberChoice();
     })
     
 };
 
 function finaliseTeamProfiles() {
-    console.log(team);
-    // fs.writeFile(
-    //     // this is the file to be created
-    //     // outputPath,
-    //     // this is what will be in the file (pulls the previously mentioned variable/function)
-    //     // render(team),
-    //     // this is a validation, if there is an error it will console else, success will be consoled.
-    //     (err) => err ? console.error(err) : console.log('Success'))
+    console.log("This is your team: ", '\n',  team , '\n',  "Open the html file in live server to see the deployed application.");
+    fs.writeFile(
+        // this is the file to be created
+        outputPath,
+        // this is what will be in the file (pulls the previously mentioned variable/function)
+        render(team),
+        // this is a validation, if there is an error it will console else, success will be consoled.
+        (err) => err ? console.error(err) : console.log('Success'))
 }
 
-const teamMemberChoice = () => {
+function teamMemberChoice () {
     const choice = ['Add an engineer', 'Add an intern', 'Finish building the team'];
     inquirer.prompt(
         {
@@ -105,19 +105,18 @@ const teamMemberChoice = () => {
     )
         .then((response) => {
             if (response.more === choice[0]) {
-                console.log("Adding engineer");
+                console.log("Adding engineer...");
                 addEngineer();
             }
             else if (response.more === choice[1]) {
-                console.log("Adding intern");
+                console.log("Adding intern...");
                 addIntern();
             }
-            else () => {
-                console.log("Finalising team profile");
+            else {
+                console.log("Finalising team profile...");
                 finaliseTeamProfiles()
-            }
-            // console.log(response);
-        })
+        }
+            })
 };
 
 function startQuestions() {
