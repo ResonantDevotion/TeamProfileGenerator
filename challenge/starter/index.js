@@ -12,14 +12,6 @@ const render = require("./src/page-template.js");
 
 const team = [];
 
-// const addTeamMember =
-// {
-//     type: 'list',
-//     name: 'more',
-//     message: 'Do you want to:',
-//     choices: ['Add an engineer', 'Add an intern', 'Finish building the team']
-// };
-
 function addIntern() {
     inquirer.prompt(
         [{
@@ -83,14 +75,14 @@ function addEngineer() {
 };
 
 function finaliseTeamProfiles() {
-    console.log("This is your team: ", '\n',  team , '\n',  "Open the html file in live server to see the deployed application.");
+    console.log("This is your team: ", '\n',  team);
     fs.writeFile(
         // this is the file to be created
         outputPath,
         // this is what will be in the file (pulls the previously mentioned variable/function)
         render(team),
         // this is a validation, if there is an error it will console else, success will be consoled.
-        (err) => err ? console.error(err) : console.log('Success'))
+        (err) => err ? console.error(err) : console.log("Open the html file in live server to see the deployed application."))
 }
 
 function teamMemberChoice () {
@@ -141,15 +133,9 @@ function startQuestions() {
             message: 'What is your team managers office number?',
             name: 'mOffice'
         },
-        // {
-        //     type: 'list',
-        //     name: 'more',
-        //     message: 'Do you want to:',
-        //     choices: ['Add an engineer', 'Add an intern', 'Finish building the team']
-        // }
-        // addTeamMember
     ])
         .then((response) => {
+            console.log('Adding the manager...');
             const manager = new Manager(response.mName, response.mID, response.mEmail, response.mOffice);
             team.push(manager);
             teamMemberChoice();
