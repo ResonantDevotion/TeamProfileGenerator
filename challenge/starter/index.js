@@ -6,8 +6,8 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
-// given variables that link to different paths i.e the starter folder, and joining an html to it
-const OUTPUT_DIR = path.resolve(__dirname, "starter");
+// given variables that link to different paths i.e the TeamProfileGenerator folder, and joining an html to it
+const OUTPUT_DIR = path.resolve(__dirname, "TeamProfileGenerator");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 // to render the data using the given template
