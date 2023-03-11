@@ -2,7 +2,7 @@
 An app that gathers information about employees and displays the infomation in a HTML webpage. 
 
 # Description
-This was a project designed to asses and develop our skills in object-oriented programming,test-driven development, javascript, ES6 and node. It had two major components, deconstructing tests and writing the corresponding code, and using inquirer to interactively seek user input, collate and manipukate data, and then create a file, selective displaying the data on a pre-formatted template. The problem that this application solves is the ability to access is chosen employee data and contacts.
+This was a project designed to asses and develop our skills in object-oriented programming, test-driven development, javascript, ES6 and node. It had two major components, deconstructing tests and writing the corresponding code, and using inquirer to interactively seek user input, collate and manipulate data, and then create a file, selective displaying the data on a pre-formatted template. The problem that this application solves is the ability to access chosen employee data and contacts in an easy-to-read team webpage. This was challenging for me as I struggled a lot with the syntax, and the nested functions, however by the end of the project I was better able to understand the logic behind it this is shown in the comments.
 
 # User Story
 AS A manager
