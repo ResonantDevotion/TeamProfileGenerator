@@ -83,13 +83,13 @@ function addEngineer() {
             team.push(engineer);
             // running the function to add another team member choice
             teamMemberChoice();
-    })
-    
+        })
+
 };
 
 // function to finalise the team profiles by creating a file with the collected data
 function finaliseTeamProfiles() {
-    console.log("This is your team: ", '\n',  team);
+    console.log("This is your team: ", '\n', team);
     // writes/creates the file
     fs.writeFile(
         // this is the file to be created (pulls the previously mentioned variable/function line 10-11)
@@ -101,7 +101,7 @@ function finaliseTeamProfiles() {
 }
 
 // function to choose an additional member of the team
-function teamMemberChoice () {
+function teamMemberChoice() {
     // a variable of an array matching inquirer response options
     const choice = ['Add an engineer', 'Add an intern', 'Finish building the team'];
 
@@ -127,8 +127,8 @@ function teamMemberChoice () {
             else {
                 console.log("Finalising team profile...");
                 finaliseTeamProfiles()
-        }
-            })
+            }
+        })
 };
 
 //start questions to add team manager info
