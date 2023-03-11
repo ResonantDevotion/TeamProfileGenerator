@@ -26,7 +26,10 @@ Deployed application and html should resemble the following image:
 <img width="1430" alt="Screenshot 2023-03-11 at 12 42 25 PM" src="https://user-images.githubusercontent.com/119468426/224453895-938a129f-4607-48dd-8ffa-9bf931c43d38.png">
 
 An example of the team data input dialogue:
-<img width="482" alt="Screenshot 2023-03-11 at 12 41 53 PM" src="https://user-images.githubusercontent.com/119468426/224453908-54d38ce0-b974-4435-b5e7-f4a125c34d64.png">
+
+<img width="459" alt="Screenshot 2023-03-11 at 12 41 43 PM" src="https://user-images.githubusercontent.com/119468426/224453915-2b5de530-5109-4a9b-b776-299444a67d9a.png">
+
+
 
 <img width="459" alt="Screenshot 2023-03-11 at 12 41 43 PM" src="https://user-images.githubusercontent.com/119468426/224453915-2b5de530-5109-4a9b-b776-299444a67d9a.png">
 
